@@ -38,7 +38,7 @@ def sin(angle):
     return approximation;
 
 def cos(angle):
-    return PI/2 - sin(angle);
+    return sin(PI/2 - angle);
 
 def tan(angle):
     threshold = 0.001;
