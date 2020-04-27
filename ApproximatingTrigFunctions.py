@@ -47,7 +47,28 @@ def tan(angle):
     else:
         return sin(angle)/cos(angle);
     
-##def getSinReference(angle):
+def outOfRangeSin(angle):
+    if (angle > 2*PI):
+        while (angle > 2*PI):
+            angle = angle - 2*PI;
+    elif (angle < 0):
+        while (angle < 0):
+            angle = angle + 2*PI;
+            
+    if (angle > PI):
+        sign = -1;
+    else:
+        sign = 1;
+    
+    if (angle > PI/2 and angle < 3*PI/2):
+        angle = PI - angle;
+        
+    elif (angle > 3*PI/2 and angle < 2*PI):
+        angle = 2*PI - angle;
+        
+    answer = sign*2*sin(angle/2)*cos(angle/2);
+     
+    return answer;
     
 printIntro();
 choice = getChoice();
